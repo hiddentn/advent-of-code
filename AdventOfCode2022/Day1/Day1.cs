@@ -8,13 +8,17 @@ public class Day1 : DaySolver
 	{
 	}
 
-	public override string SolvePart1()
-	{
-		throw new NotImplementedException();
-	}
+	public override string SolvePart1() =>
+		InputLines
+			.Split(x => x == "")
+			.Select(s => s.Select(i => int.Parse(i)).Sum())
+			.Max().ToString();
 
-	public override string SolvePart2()
-	{
-		throw new NotImplementedException();
-	}
+	public override string SolvePart2() =>
+		InputLines
+			.Split(x => x == "")
+			.Select(s => s.Select(i => int.Parse(i)).Sum())
+			.OrderDescending()
+			.Take(3)
+			.Sum().ToString();
 }
