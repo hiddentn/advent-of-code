@@ -2,9 +2,9 @@
 
 namespace AdventOfCode2022.Day1;
 
-public class Day1 : DaySolver
+public class Day1Solver : DaySolver
 {
-	public Day1(DaySolverOptions options) : base(options)
+	public Day1Solver(DaySolverOptions options) : base(options)
 	{
 	}
 

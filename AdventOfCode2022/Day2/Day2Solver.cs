@@ -3,9 +3,9 @@ using AdventOfCode.Abstractions;
 
 namespace AdventOfCode2022.Day2;
 
-public class Day2 : DaySolver
+public class Day2Solver : DaySolver
 {
-	public Day2(DaySolverOptions options) : base(options)
+	public Day2Solver(DaySolverOptions options) : base(options)
 	{
 	}
 
@@ -60,28 +60,22 @@ public class Day2 : DaySolver
 	/// <exception cref="UnreachableException"></exception>
 	private static int GetMyScore(string opponent, string me)
 	{
-		if (opponent == "A")
+		return opponent switch
 		{
-			if (me == "X") return 3;
-			if (me == "Y") return 6;
-			if (me == "Z") return 0;
-		}
+			"B" when me == "Y" => 3,
+			"A" when me == "X" => 3,
+			"C" when me == "Z" => 3,
 
-		if (opponent == "B")
-		{
-			if (me == "X") return 0;
-			if (me == "Y") return 3;
-			if (me == "Z") return 6;
-		}
+			"C" when me == "X" => 6,
+			"A" when me == "Y" => 6,
+			"B" when me == "Z" => 6,
 
-		if (opponent == "C")
-		{
-			if (me == "X") return 6;
-			if (me == "Y") return 0;
-			if (me == "Z") return 3;
-		}
+			"A" when me == "Z" => 0,
+			"B" when me == "X" => 0,
+			"C" when me == "Y" => 0,
 
-		throw new UnreachableException("welp ? ");
+			_ => throw new UnreachableException("welp ? ")
+		};
 	}
 
 
@@ -99,27 +93,21 @@ public class Day2 : DaySolver
 	/// <exception cref="UnreachableException"></exception>
 	private static string GetMyMove(string opponentMove, string gameOutcome)
 	{
-		if (opponentMove == "A")
+		return opponentMove switch
 		{
-			if (gameOutcome == "X") return "C";
-			if (gameOutcome == "Y") return "A";
-			if (gameOutcome == "Z") return "B";
-		}
+			"A" when gameOutcome == "Y" => "A",
+			"B" when gameOutcome == "X" => "A",
+			"C" when gameOutcome == "Z" => "A",
 
-		if (opponentMove == "B")
-		{
-			if (gameOutcome == "X") return "A";
-			if (gameOutcome == "Y") return "B";
-			if (gameOutcome == "Z") return "C";
-		}
+			"A" when gameOutcome == "Z" => "B",
+			"B" when gameOutcome == "Y" => "B",
+			"C" when gameOutcome == "X" => "B",
 
-		if (opponentMove == "C")
-		{
-			if (gameOutcome == "X") return "B";
-			if (gameOutcome == "Y") return "C";
-			if (gameOutcome == "Z") return "A";
-		}
+			"A" when gameOutcome == "X" => "C",
+			"B" when gameOutcome == "Z" => "C",
+			"C" when gameOutcome == "Y" => "C",
 
-		throw new UnreachableException("welp ? ");
+			_ => throw new UnreachableException("welp ? ")
+		};
 	}
 }
