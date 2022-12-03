@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdventOfCode.Abstractions\AdventOfCode.Abstractions.csproj"/>
-    <ProjectReference Include="..\AdventOfCode.Common\AdventOfCode.Common.csproj"/>
+    <ProjectReference Include="..\AdventOfCode.Abstractions\AdventOfCode.Abstractions.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Common\AdventOfCode.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

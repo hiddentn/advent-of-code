@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using AdventOfCode.Abstractions;
-using AdventOfCode2022.Day2;
+using AdventOfCode2022.Day3;
 
-var options = DaySolverOptions.Configure(opt => { opt.InputFilepath = "Day2/input.txt"; });
+var options = DaySolverOptions.Configure(opt => { opt.InputFilepath = "Day3/input.txt"; });
 
-var solver = new Day2(options);
+var solver = new Day3Solver(options);
 var watch = new Stopwatch();
 
 watch.Start();

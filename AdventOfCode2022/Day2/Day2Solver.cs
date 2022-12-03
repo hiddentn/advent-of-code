@@ -44,20 +44,7 @@ public class Day2Solver : DaySolver
 			.Sum()
 			.ToString();
 
-	/// <summary>
-	/// for opponent
-	/// A for Rock,
-	/// B for Paper,
-	/// C for Scissors.
-	/// for me
-	/// X for Rock,
-	/// Y for Paper,
-	/// Z for Scissors.
-	/// </summary>
-	/// <param name="opponent"></param>
-	/// <param name="me"></param>
-	/// <returns></returns>
-	/// <exception cref="UnreachableException"></exception>
+
 	private static int GetMyScore(string opponent, string me)
 	{
 		return opponent switch
@@ -78,19 +65,6 @@ public class Day2Solver : DaySolver
 		};
 	}
 
-
-	/// <summary>
-	/// A for Rock,
-	/// B for Paper,
-	/// C for Scissors.
-	/// X means lose,
-	/// Y means  draw,
-	/// Z win.
-	/// </summary>
-	/// <param name="opponentMove"></param>
-	/// <param name="gameOutcome"></param>
-	/// <returns></returns>
-	/// <exception cref="UnreachableException"></exception>
 	private static string GetMyMove(string opponentMove, string gameOutcome)
 	{
 		return opponentMove switch

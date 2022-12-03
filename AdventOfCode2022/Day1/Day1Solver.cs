@@ -12,7 +12,8 @@ public class Day1Solver : DaySolver
 		InputLines
 			.Split(x => x == "")
 			.Select(s => s.Select(i => int.Parse(i)).Sum())
-			.Max().ToString();
+			.Max()
+			.ToString();
 
 	public override string SolvePart2() =>
 		InputLines
@@ -20,5 +21,6 @@ public class Day1Solver : DaySolver
 			.Select(s => s.Select(i => int.Parse(i)).Sum())
 			.OrderDescending()
 			.Take(3)
-			.Sum().ToString();
+			.Sum()
+			.ToString();
 }
