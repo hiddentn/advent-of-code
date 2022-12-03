@@ -5,11 +5,6 @@ namespace AdventOfCode2022.Day2;
 
 public class Day2Solver : DaySolver
 {
-	public Day2Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
-
 	private readonly IDictionary<string, int> _moveScoreMap = new Dictionary<string, int>
 	{
 		{ "X", 1 },
@@ -18,7 +13,7 @@ public class Day2Solver : DaySolver
 		// part 2
 		{ "A", 1 },
 		{ "B", 2 },
-		{ "C", 3 },
+		{ "C", 3 }
 	};
 
 
@@ -26,23 +21,31 @@ public class Day2Solver : DaySolver
 	{
 		{ "X", 0 },
 		{ "Y", 3 },
-		{ "Z", 6 },
+		{ "Z", 6 }
 	};
 
+	public Day2Solver(DaySolverOptions options) : base(options)
+	{
+	}
 
-	public override string SolvePart1() =>
-		InputLines
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.Select(line => line.Split(' '))
 			.Select(game => _moveScoreMap[game[1]] + GetMyScore(game[0], game[1]))
 			.Sum()
 			.ToString();
+	}
 
-	public override string SolvePart2() =>
-		InputLines
+	public override string SolvePart2()
+	{
+		return InputLines
 			.Select(line => line.Split(' '))
 			.Select(game => _moveScoreMap[GetMyMove(game[0], game[1])] + _outComeScoreMap[game[1]])
 			.Sum()
 			.ToString();
+	}
 
 
 	private static int GetMyScore(string opponent, string me)
