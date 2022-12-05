@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdventOfCode.Abstractions\AdventOfCode.Abstractions.csproj"/>
-    <ProjectReference Include="..\AdventOfCode.Common\AdventOfCode.Common.csproj"/>
+    <ProjectReference Include="..\AdventOfCode.Abstractions\AdventOfCode.Abstractions.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Common\AdventOfCode.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="*\**\input.txt">
+    <None Update="*\**\*.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

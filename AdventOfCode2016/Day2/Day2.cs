@@ -39,16 +39,36 @@ public class Day2Solver : DaySolver
 			.Aggregate((a, b) => a + b);
 
 
-	public override string SolvePart2() =>
-		InputLines
-			.Select(line => line.Aggregate((x: 1, y: 1), (pos, c) => c switch
+	public override string SolvePart2()
+	{
+		var positions = new List<(int x, int y)>();
+
+		foreach (var line in InputLines)
+		{
+			var pos = (x: 0, y: 2);
+
+			foreach (var c in line)
 			{
-				'U' => KeyPad2[pos.y - 1][pos.x] != null ? (pos.x, pos.y--) : (pos.x, pos.y),
-				'D' => KeyPad2[pos.y + 1][pos.x] != null ? (pos.x, pos.y++) : (pos.x, pos.y),
-				'L' => KeyPad2[pos.y][pos.x - 1] != null ? (pos.x--, pos.y) : (pos.x, pos.y),
-				'R' => KeyPad2[pos.y][pos.x + 1] != null ? (pos.x++, pos.y) : (pos.x, pos.y),
-				_ => throw new InvalidOperationException()
-			}))
-			.Select(pos => KeyPad2[pos.y][pos.x])
-			.Aggregate((a, b) => a + b);
+				(int x, int y) newPos = c switch
+				{
+					'U' => (pos.x, Math.Max(0, pos.y - 1)),
+					'D' => (pos.x, Math.Min(4, pos.y + 1)),
+					'L' => (Math.Max(0, pos.x - 1), pos.y),
+					'R' => (Math.Min(4, pos.x + 1), pos.y),
+					_ => throw new InvalidOperationException()
+				};
+
+				if (KeyPad2[newPos.y][newPos.x] != null)
+				{
+					pos = newPos;
+				}
+			}
+
+			positions.Add(pos);
+		}
+
+
+		var keys = positions.Select(pos => KeyPad2[pos.y][pos.x]).ToList();
+		return keys.Aggregate((a, b) => a + b);
+	}
 }
