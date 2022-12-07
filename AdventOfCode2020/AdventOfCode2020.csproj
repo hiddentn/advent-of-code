@@ -14,8 +14,8 @@
 
 
   <ItemGroup>
-    <None Update="*\**\*.txt">
-      <CopyToOutputDirectory>Allways</CopyToOutputDirectory>
+    <None Update="*\**\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
