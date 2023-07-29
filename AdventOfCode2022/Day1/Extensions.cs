@@ -19,5 +19,10 @@ public static class Extensions
 				current.Add(item);
 			}
 		}
+
+		if (current.Any())
+		{
+			yield return current;
+		}
 	}
 }
