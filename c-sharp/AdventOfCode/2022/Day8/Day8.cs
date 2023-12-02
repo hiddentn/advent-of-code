@@ -64,10 +64,7 @@ public class Day8Solver : DaySolver
 				if (grid[j][x] >= current)
 					visible = false;
 
-			if (visible)
-			{
-				count++;
-			}
+			if (visible) count++;
 		}
 
 		return count.ToString();

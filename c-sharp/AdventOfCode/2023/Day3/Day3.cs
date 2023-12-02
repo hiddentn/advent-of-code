@@ -8,7 +8,7 @@ public class Day3Solver : DaySolver
 	{
 	}
 
-	public override string Day => "2";
+	public override string Day => "3";
 	public override string Year => "2023";
 
 

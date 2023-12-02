@@ -17,7 +17,7 @@ public class Day2Solver : DaySolver
 			.Select(line =>
 			{
 				var groups = line.GroupBy(c => c).Select(g => g.Count());
-				(var twos, var threes) = (groups.Contains(2) ? 1 : 0, groups.Contains(3) ? 1 : 0);
+				var (twos, threes) = (groups.Contains(2) ? 1 : 0, groups.Contains(3) ? 1 : 0);
 				return (twos, threes);
 			})
 			.Aggregate((twos: 0, threes: 0), (acc, next) => (acc.twos + next.twos, acc.threes + next.threes));
