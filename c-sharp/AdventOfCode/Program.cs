@@ -1,7 +1,6 @@
 ﻿using AdventOfCode._2023.Day3;
 using AdventOfCode.Common;
 
-
 var options = DaySolverOptions.Configure(opt => { opt.InputFilepath = "2023/Day3/input.txt"; });
 var solver = new Day3Solver(options);
 var watch = Stopwatch.StartNew();

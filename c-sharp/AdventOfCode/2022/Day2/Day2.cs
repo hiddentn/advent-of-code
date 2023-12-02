@@ -4,9 +4,6 @@ namespace AdventOfCode._2022.Day2;
 
 public class Day2Solver : DaySolver
 {
-	public override string Day => "2";
-	public override string Year => "2022";
-
 	private readonly IDictionary<string, int> _moveScoreMap = new Dictionary<string, int>
 	{
 		{ "X", 1 },
@@ -29,6 +26,9 @@ public class Day2Solver : DaySolver
 	public Day2Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "2";
+	public override string Year => "2022";
 
 
 	public override string SolvePart1()

@@ -11,8 +11,8 @@ public enum Operation
 
 public class Instruction
 {
-	public readonly Operation Operation;
 	public readonly int Argument;
+	public readonly Operation Operation;
 
 	public Instruction(Operation operation, int argument)
 	{
@@ -45,39 +45,32 @@ public abstract class Cpu
 public class Cpu1 : Cpu
 {
 	private int _cycle = 20;
-	public int Str = 0;
+	public int Str;
 
 	public override void Tick()
 	{
-		if ((++_cycle % 40) == 0) Str += (_cycle - 20) * X;
+		if (++_cycle % 40 == 0) Str += (_cycle - 20) * X;
 	}
 }
 
 public class Cpu2 : Cpu
 {
-	public int Cycle = 0;
-	public readonly StringBuilder Sb = new StringBuilder();
+	public readonly StringBuilder Sb = new();
+	public int Cycle;
 
 	public override void Tick()
 	{
 		if (Cycle % 40 == 0) Sb.Append('\n');
-		int posix = (Cycle++ % 40);
+		var posix = Cycle++ % 40;
 		if (posix == X || posix == X - 1 || posix == (X + 1) % 40)
-		{
 			Sb.Append('█');
-		}
 		else
-		{
 			Sb.Append(' ');
-		}
 	}
 }
 
 public class Day10_2Solver : DaySolver
 {
-	public override string Day => "10";
-	public override string Year => "2022";
-
 	public readonly List<Instruction> Program = new();
 
 	public Day10_2Solver(DaySolverOptions options) : base(options)
@@ -89,6 +82,9 @@ public class Day10_2Solver : DaySolver
 			Program.Add(new Instruction(Enum.Parse<Operation>(parts[0].ToUpper()), value));
 		}
 	}
+
+	public override string Day => "10";
+	public override string Year => "2022";
 
 
 	public override string SolvePart1()

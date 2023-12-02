@@ -5,16 +5,17 @@ namespace AdventOfCode._2015.Day1;
 
 public class Day1Solver : DaySolver
 {
-	public override string Day => "1";
-	public override string Year => "2015";
-
 	public Day1Solver(DaySolverOptions options) : base(options)
 	{
 	}
 
+	public override string Day => "1";
+	public override string Year => "2015";
 
-	public override string SolvePart1() =>
-		InputLines
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.First()
 			.Select(step => step switch
 			{
@@ -24,9 +25,11 @@ public class Day1Solver : DaySolver
 			})
 			.Sum()
 			.ToString();
+	}
 
-	public override string SolvePart2() =>
-		InputLines
+	public override string SolvePart2()
+	{
+		return InputLines
 			.First()
 			.Bind(steps =>
 			{
@@ -40,13 +43,11 @@ public class Day1Solver : DaySolver
 						_ => throw new InvalidOperationException($"Invalid step: {step}")
 					};
 
-					if (floor < 0)
-					{
-						return index + 1;
-					}
+					if (floor < 0) return index + 1;
 				}
 
 				throw new UnreachableException("Santa never went to the basement");
 			})
 			.ToString();
+	}
 }

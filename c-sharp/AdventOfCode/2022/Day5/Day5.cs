@@ -4,11 +4,12 @@ namespace AdventOfCode._2022.Day5;
 
 public class Day5Solver : DaySolver
 {
-	public override string Day => "5";
-	public override string Year => "2022";
 	public Day5Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "5";
+	public override string Year => "2022";
 
 	public override string SolvePart1()
 	{
@@ -25,10 +26,7 @@ public class Day5Solver : DaySolver
 			var fromStack = stacks[from - 1];
 			var toStack = stacks[to - 1];
 
-			for (var i = 0; i < count; i++)
-			{
-				toStack.Push(fromStack.Pop());
-			}
+			for (var i = 0; i < count; i++) toStack.Push(fromStack.Pop());
 		}
 
 		// concat to top items from each stack to get the final result
@@ -51,15 +49,9 @@ public class Day5Solver : DaySolver
 			var toStack = stacks[to - 1];
 
 			var temp = new Stack<char>();
-			for (var i = 0; i < count; i++)
-			{
-				temp.Push(fromStack.Pop());
-			}
+			for (var i = 0; i < count; i++) temp.Push(fromStack.Pop());
 
-			while (temp.Count > 0)
-			{
-				toStack.Push(temp.Pop());
-			}
+			while (temp.Count > 0) toStack.Push(temp.Pop());
 		}
 
 		return string.Join("", stacks.Select(s => s.Peek()));
@@ -68,17 +60,17 @@ public class Day5Solver : DaySolver
 
 	private List<Stack<char>> CreateInput()
 	{
-		var stacks = new List<Stack<char>>()
+		var stacks = new List<Stack<char>>
 		{
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
-			new Stack<char>(),
+			new(),
+			new(),
+			new(),
+			new(),
+			new(),
+			new(),
+			new(),
+			new(),
+			new()
 		};
 
 		// [P]

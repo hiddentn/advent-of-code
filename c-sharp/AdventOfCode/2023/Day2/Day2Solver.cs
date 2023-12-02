@@ -5,7 +5,7 @@ namespace AdventOfCode._2023.Day2;
 public record Set(int Red, int Blue, int Green)
 {
 	public bool IsValid => Red <= 12 && Green <= 13 && Blue <= 14;
-};
+}
 
 public record Game(int Id, List<Set> Sets)
 {
@@ -16,16 +16,16 @@ public record Game(int Id, List<Set> Sets)
 	public bool IsValid => Sets.All(s => s.IsValid);
 
 	public int Power => MaxRed * MaxBlue * MaxGreen;
-};
+}
 
 public class Day2Solver : DaySolver
 {
-	public override string Day => "2";
-	public override string Year => "2023";
-
 	public Day2Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "2";
+	public override string Year => "2023";
 
 	private static Game Parse(string input)
 	{
@@ -41,20 +41,11 @@ public class Day2Solver : DaySolver
 			var blue = 0;
 			var green = 0;
 			foreach (var color in colors)
-			{
 				if (color.EndsWith("red"))
-				{
 					red += int.Parse(color.Split(" ")[0]);
-				}
 				else if (color.EndsWith("blue"))
-				{
 					blue += int.Parse(color.Split(" ")[0]);
-				}
-				else if (color.EndsWith("green"))
-				{
-					green += int.Parse(color.Split(" ")[0]);
-				}
-			}
+				else if (color.EndsWith("green")) green += int.Parse(color.Split(" ")[0]);
 
 			sets.Add(new Set(red, blue, green));
 		}

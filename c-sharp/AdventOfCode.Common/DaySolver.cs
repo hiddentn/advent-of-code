@@ -35,6 +35,18 @@ public abstract class DaySolver : IDaySolver
 	/// </summary>
 	private string Input { get; }
 
+	/// <summary>
+	///     The lines of the input file (excluding one last empty line after newline break).
+	/// </summary>
+	protected IEnumerable<string> InputLines
+	{
+		get
+		{
+			using StringReader reader = new(Input);
+			while (reader.ReadLine() is { } line) yield return line;
+		}
+	}
+
 
 	public abstract string Day { get; }
 	public abstract string Year { get; }
@@ -60,17 +72,5 @@ public abstract class DaySolver : IDaySolver
 	protected SpanLineEnumerator EnumerateInputLines()
 	{
 		return Input.AsSpan().EnumerateLines();
-	}
-
-	/// <summary>
-	///     The lines of the input file (excluding one last empty line after newline break).
-	/// </summary>
-	protected IEnumerable<string> InputLines
-	{
-		get
-		{
-			using StringReader reader = new(Input);
-			while (reader.ReadLine() is { } line) yield return line;
-		}
 	}
 }

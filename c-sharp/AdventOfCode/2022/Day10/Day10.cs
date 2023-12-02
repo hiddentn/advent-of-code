@@ -4,20 +4,13 @@ namespace AdventOfCode._2022.Day10;
 
 public class Day10Solver : DaySolver
 {
-	public override string Day => "10";
-	public override string Year => "2022";
-
-	public Day10Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
-	private Dictionary<string, int> _actionCycles = new Dictionary<string, int>()
+	private readonly Dictionary<string, int> _actionCycles = new()
 	{
 		{ "addx", 2 },
 		{ "noop", 1 }
 	};
 
-	private List<int> _cycles = new List<int>()
+	private readonly List<int> _cycles = new()
 	{
 		20,
 		60,
@@ -26,6 +19,13 @@ public class Day10Solver : DaySolver
 		180,
 		220
 	};
+
+	public Day10Solver(DaySolverOptions options) : base(options)
+	{
+	}
+
+	public override string Day => "10";
+	public override string Year => "2022";
 
 	public override string SolvePart1()
 	{
@@ -58,29 +58,22 @@ public class Day10Solver : DaySolver
 		var Height = 6;
 
 		var screen = new char[Height, Width];
-		for (int i = 0; i < Height; i++)
-		{
-			for (int j = 0; j < Width; j++)
-			{
-				screen[i, j] = '.';
-			}
-		}
+		for (var i = 0; i < Height; i++)
+		for (var j = 0; j < Width; j++)
+			screen[i, j] = '.';
 
 		var end = values.Last().cycle;
 		// draw
-		for (int i = 0; i < end; i++)
+		for (var i = 0; i < end; i++)
 		{
 		}
 
 
 		// render
-		for (int i = 0; i < Height; i++)
+		for (var i = 0; i < Height; i++)
 		{
 			var line = "";
-			for (int j = 0; j < Width; j++)
-			{
-				line += screen[i, j];
-			}
+			for (var j = 0; j < Width; j++) line += screen[i, j];
 
 			Console.WriteLine(line);
 		}
@@ -88,21 +81,20 @@ public class Day10Solver : DaySolver
 
 		return "Not Implemented";
 
-		int x = 1;
+		var x = 1;
 		Console.WriteLine(File.ReadAllText("Day10.txt").Split(new[] { Environment.NewLine, " " }, 0)
-			.Select((x, i) => (index: i, addrx: int.TryParse(x, out int parsed) ? parsed : 0))
+			.Select((x, i) => (index: i, addrx: int.TryParse(x, out var parsed) ? parsed : 0))
 			.Select(y => (y.index, addrx: x += y.addrx)).Where(y => y.index % 40 == 19)
 			.Sum(y => y.addrx * (y.index + 1)));
 	}
 
 	private List<(int cycle, int value)> PlaybackActions(List<(string action, int count)> actions, int defaut)
 	{
-		var values = new List<(int cycle, int value)>()
+		var values = new List<(int cycle, int value)>
 		{
 			(0, defaut)
 		};
 		foreach (var action in actions)
-		{
 			if (action.action.StartsWith("addx"))
 			{
 				var value = int.Parse(action.action.Split(" ").Last());
@@ -112,7 +104,6 @@ public class Day10Solver : DaySolver
 			{
 				values.Add((values.Last().cycle + action.count, values.Last().value));
 			}
-		}
 
 		return values;
 	}

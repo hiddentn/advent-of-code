@@ -1,5 +1,4 @@
 using AdventOfCode._2022.Day1;
-using AdventOfCode.Common;
 
 namespace AdventOfCode.Tests._2022;
 

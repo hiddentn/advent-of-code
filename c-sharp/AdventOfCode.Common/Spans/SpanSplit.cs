@@ -23,7 +23,7 @@ public readonly ref struct SpanSplit<T> where T : IEquatable<T>
 	/// <summary>Gets an enumerator for this split.</summary>
 	public Enumerator GetEnumerator()
 	{
-		return new(_span, _separator);
+		return new Enumerator(_span, _separator);
 	}
 
 	/// <summary>Enumerates the parts of a span using separator provided in <see cref="SpanSplit{T}" />.</summary>

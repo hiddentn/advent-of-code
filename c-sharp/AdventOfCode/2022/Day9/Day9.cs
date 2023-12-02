@@ -4,12 +4,12 @@ namespace AdventOfCode._2022.Day9;
 
 public class Day9Solver : DaySolver
 {
-	public override string Day => "9";
-	public override string Year => "2022";
-
 	public Day9Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "9";
+	public override string Year => "2022";
 
 	public override string SolvePart1()
 	{
@@ -28,14 +28,12 @@ public class Day9Solver : DaySolver
 		var tx = 0;
 		var visited = new HashSet<(int x, int y)> { (tx, ty) };
 		foreach (var (direction, count) in commands)
-		{
-			for (int i = 0; i < count; i++)
+			for (var i = 0; i < count; i++)
 			{
 				(hx, hy) = Move(hx, hy, direction);
 				(tx, ty) = UpdateTail(hx, hy, tx, ty);
 				visited.Add((tx, ty));
 			}
-		}
 
 		return visited.Count.ToString();
 	}
@@ -103,8 +101,9 @@ public class Day9Solver : DaySolver
 		return (tx, ty);
 	}
 
-	private static (int hx, int hy) Move(int hx, int hy, string direction) =>
-		direction switch
+	private static (int hx, int hy) Move(int hx, int hy, string direction)
+	{
+		return direction switch
 		{
 			"U" => (hx, hy - 1),
 			"D" => (hx, hy + 1),
@@ -112,6 +111,7 @@ public class Day9Solver : DaySolver
 			"R" => (hx + 1, hy),
 			_ => throw new UnreachableException()
 		};
+	}
 
 	public override string SolvePart2()
 	{
@@ -128,7 +128,6 @@ public class Day9Solver : DaySolver
 
 
 		foreach (var (direction, count) in commands)
-		{
 			for (var _ = 0; _ < count; _++)
 			{
 				var (x, y) = rope.First();
@@ -144,7 +143,6 @@ public class Day9Solver : DaySolver
 
 				visited.Add(rope.Last());
 			}
-		}
 
 
 		return visited.Count.ToString();

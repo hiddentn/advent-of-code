@@ -6,6 +6,13 @@ namespace AdventOfCode.Common;
 public class DaySolverOptions
 {
 	/// <summary>
+	///     Constructor that creates empty options with default values.
+	/// </summary>
+	public DaySolverOptions()
+	{
+	}
+
+	/// <summary>
 	///     A <see cref="TextReader" /> that reads the input text.
 	/// </summary>
 	/// <remarks>
@@ -22,14 +29,6 @@ public class DaySolverOptions
 	///     If <see cref="InputReader" /> is not <see langword="null" />, this property should be ignored.
 	/// </remarks>
 	public string InputFilepath { get; set; } = "input.txt";
-
-
-	/// <summary>
-	///     Constructor that creates empty options with default values.
-	/// </summary>
-	public DaySolverOptions()
-	{
-	}
 
 
 	/// <summary>

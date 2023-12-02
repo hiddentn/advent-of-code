@@ -5,14 +5,16 @@ namespace AdventOfCode._2016.Day1;
 
 public class Day1Solver : DaySolver
 {
-	public override string Day => "1";
-	public override string Year => "2016";
 	public Day1Solver(DaySolverOptions options) : base(options)
 	{
 	}
 
-	public override string SolvePart1() =>
-		InputLines
+	public override string Day => "1";
+	public override string Year => "2016";
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.First()
 			.Split(", ")
 			.Bind(instructions =>
@@ -24,7 +26,7 @@ public class Day1Solver : DaySolver
 				foreach (var instruction in instructions)
 				{
 					var turn = instruction[0].ToString();
-					var distance = int.Parse((string)instruction.Substring(1));
+					var distance = int.Parse(instruction.Substring(1));
 					(x, y) = GetMove(x, y, direction, turn, distance);
 					direction = GetNewDirection(direction, turn);
 				}
@@ -32,10 +34,12 @@ public class Day1Solver : DaySolver
 				return Math.Abs(x) + Math.Abs(y);
 			})
 			.ToString();
+	}
 
 
-	public override string SolvePart2() =>
-		InputLines
+	public override string SolvePart2()
+	{
+		return InputLines
 			.First()
 			.Split(", ")
 			.Bind(instructions =>
@@ -52,10 +56,7 @@ public class Day1Solver : DaySolver
 					for (var i = 0; i < distance; i++)
 					{
 						(x, y) = GetMove(x, y, direction, turn, 1);
-						if (!visited.Add((x, y)))
-						{
-							return Math.Abs(x) + Math.Abs(y);
-						}
+						if (!visited.Add((x, y))) return Math.Abs(x) + Math.Abs(y);
 					}
 
 					direction = GetNewDirection(direction, turn);
@@ -64,6 +65,7 @@ public class Day1Solver : DaySolver
 				return Math.Abs(x) + Math.Abs(y);
 			})
 			.ToString();
+	}
 
 	private static (int x, int y) GetMove(int x, int y, int direction, string turn, int distance)
 	{

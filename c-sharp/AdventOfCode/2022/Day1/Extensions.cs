@@ -8,7 +8,6 @@ public static class Extensions
 		ArgumentNullException.ThrowIfNull(source);
 		var current = new List<TSource>();
 		foreach (var item in source)
-		{
 			if (splitOn(item))
 			{
 				yield return current;
@@ -18,11 +17,7 @@ public static class Extensions
 			{
 				current.Add(item);
 			}
-		}
 
-		if (current.Any())
-		{
-			yield return current;
-		}
+		if (current.Any()) yield return current;
 	}
 }

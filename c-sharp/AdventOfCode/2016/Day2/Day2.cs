@@ -4,20 +4,14 @@ namespace AdventOfCode._2016.Day2;
 
 public class Day2Solver : DaySolver
 {
-	public override string Day => "2";
-	public override string Year => "2016";
-	public Day2Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
-	private static string[][] KeyPad =
+	private static readonly string[][] KeyPad =
 	{
 		new[] { "1", "2", "3" },
 		new[] { "4", "5", "6" },
 		new[] { "7", "8", "9" }
 	};
 
-	private static string[][] KeyPad2 =
+	private static readonly string[][] KeyPad2 =
 	{
 		new[] { null, null, "1", null, null },
 		new[] { null, "2", "3", "4", null },
@@ -26,9 +20,17 @@ public class Day2Solver : DaySolver
 		new[] { null, null, "D", null, null }
 	};
 
+	public Day2Solver(DaySolverOptions options) : base(options)
+	{
+	}
 
-	public override string SolvePart1() =>
-		InputLines
+	public override string Day => "2";
+	public override string Year => "2016";
+
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.Select(line => line.Aggregate((x: 1, y: 1), (pos, c) => c switch
 			{
 				'U' => (pos.x, Math.Max(0, pos.y - 1)),
@@ -39,6 +41,7 @@ public class Day2Solver : DaySolver
 			}))
 			.Select(pos => KeyPad[pos.y][pos.x])
 			.Aggregate((a, b) => a + b);
+	}
 
 
 	public override string SolvePart2()
@@ -60,10 +63,7 @@ public class Day2Solver : DaySolver
 					_ => throw new InvalidOperationException()
 				};
 
-				if (KeyPad2[newPos.y][newPos.x] != null)
-				{
-					pos = newPos;
-				}
+				if (KeyPad2[newPos.y][newPos.x] != null) pos = newPos;
 			}
 
 			positions.Add(pos);

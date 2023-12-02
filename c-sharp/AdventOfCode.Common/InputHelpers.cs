@@ -14,7 +14,7 @@ public static class Tools
 	}
 
 	/// <summary>
-	/// Makes a request using your session cookie to get the given input and store it in a file for future runs
+	///     Makes a request using your session cookie to get the given input and store it in a file for future runs
 	/// </summary>
 	/// <param name="year">2023 for this year</param>
 	/// <param name="day">2 for day 2</param>

@@ -29,31 +29,31 @@ public readonly partial struct Vector2D<T> :
 	/// <inheritdoc />
 	public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right)
 	{
-		return new(left.X + right.X, left.Y + right.Y);
+		return new Vector2D<T>(left.X + right.X, left.Y + right.Y);
 	}
 
 	/// <inheritdoc />
 	public static Point2D<T> operator +(Vector2D<T> left, Point2D<T> right)
 	{
-		return new(left.X + right.X, left.Y + right.Y);
+		return new Point2D<T>(left.X + right.X, left.Y + right.Y);
 	}
 
 	/// <inheritdoc />
 	public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right)
 	{
-		return new(left.X - right.X, left.Y - right.Y);
+		return new Vector2D<T>(left.X - right.X, left.Y - right.Y);
 	}
 
 	/// <inheritdoc />
 	public static Vector2D<T> operator /(Vector2D<T> left, T right)
 	{
-		return new(left.X / right, left.Y / right);
+		return new Vector2D<T>(left.X / right, left.Y / right);
 	}
 
 	/// <inheritdoc />
 	public static Vector2D<T> operator *(Vector2D<T> left, T right)
 	{
-		return new(left.X * right, left.Y * right);
+		return new Vector2D<T>(left.X * right, left.Y * right);
 	}
 
 	/// <inheritdoc />
@@ -65,12 +65,12 @@ public readonly partial struct Vector2D<T> :
 	/// <inheritdoc />
 	public static Vector2D<T> operator -(Vector2D<T> value)
 	{
-		return new(-value.X, -value.Y);
+		return new Vector2D<T>(-value.X, -value.Y);
 	}
 
 	/// <inheritdoc />
 	public static Vector2D<T> operator +(Vector2D<T> value)
 	{
-		return new(+value.X, +value.Y);
+		return new Vector2D<T>(+value.X, +value.Y);
 	}
 }

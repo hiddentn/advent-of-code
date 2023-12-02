@@ -4,18 +4,21 @@ namespace AdventOfCode._2022.Day4;
 
 public class Day4Solver : DaySolver
 {
-	public override string Day => "4";
-	public override string Year => "2022";
 	public Day4Solver(DaySolverOptions options) : base(options)
 	{
 	}
 
-	public override string SolvePart1() =>
-		InputLines
+	public override string Day => "4";
+	public override string Year => "2022";
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.Select(s => s.Split(','))
 			.Where(s => PairsInclude(s))
 			.Count()
 			.ToString();
+	}
 
 	private bool PairsInclude(string[] strings)
 	{
@@ -31,12 +34,14 @@ public class Day4Solver : DaySolver
 		return (oneStart >= twoStart && oneEnd <= twoEnd) || (twoStart >= oneStart && twoEnd <= oneEnd);
 	}
 
-	public override string SolvePart2() =>
-		InputLines
+	public override string SolvePart2()
+	{
+		return InputLines
 			.Select(s => s.Split(','))
 			.Where(s => PairsIntercect(s))
 			.Count()
 			.ToString();
+	}
 
 
 	private bool PairsIntercect(string[] strings)

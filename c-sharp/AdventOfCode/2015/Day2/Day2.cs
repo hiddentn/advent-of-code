@@ -4,14 +4,16 @@ namespace AdventOfCode._2015.Day2;
 
 public class Day2Solver : DaySolver
 {
-	public override string Day => "2";
-	public override string Year => "2015";
 	public Day2Solver(DaySolverOptions options) : base(options)
 	{
 	}
 
-	public override string SolvePart1() =>
-		InputLines
+	public override string Day => "2";
+	public override string Year => "2015";
+
+	public override string SolvePart1()
+	{
+		return InputLines
 			.Select(s => s.Split('x').Select(int.Parse).ToList())
 			.Select(s => (s[0], s[1], s[2]))
 			.Select(dims =>
@@ -22,9 +24,11 @@ public class Day2Solver : DaySolver
 			})
 			.Sum()
 			.ToString();
+	}
 
-	public override string SolvePart2() =>
-		InputLines
+	public override string SolvePart2()
+	{
+		return InputLines
 			.Select(s => s.Split('x').Select(int.Parse).ToList())
 			.Select(s => (s[0], s[1], s[2]))
 			.Select(dims =>
@@ -36,4 +40,5 @@ public class Day2Solver : DaySolver
 			})
 			.Sum()
 			.ToString();
+	}
 }

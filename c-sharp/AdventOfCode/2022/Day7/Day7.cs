@@ -4,11 +4,12 @@ namespace AdventOfCode._2022.Day7;
 
 public class Day7Solver : DaySolver
 {
-	public override string Day => "7";
-	public override string Year => "2022";
 	public Day7Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "7";
+	public override string Year => "2022";
 
 	public override string SolvePart1()
 	{
@@ -102,13 +103,9 @@ public class Day7Solver : DaySolver
 					currentDirectory += "/" + t;
 				}
 				if (!directories.ContainsKey(currentDirectory))
-				{
 					directories.Add(currentDirectory, file.Size);
-				}
 				else
-				{
 					directories[currentDirectory] += file.Size;
-				}
 			}
 		}
 

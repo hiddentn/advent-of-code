@@ -4,11 +4,12 @@ namespace AdventOfCode._2021.Day1;
 
 public class Day1Solver : DaySolver
 {
-	public override string Day => "1";
-	public override string Year => "2021";
 	public Day1Solver(DaySolverOptions options) : base(options)
 	{
 	}
+
+	public override string Day => "1";
+	public override string Year => "2021";
 
 	public override string SolvePart1()
 	{
@@ -17,12 +18,8 @@ public class Day1Solver : DaySolver
 
 		var increasedCount = 0;
 		for (var i = 0; i < lines.Count - 1; i++)
-		{
 			if (lines[i] < lines[i + 1])
-			{
 				increasedCount++;
-			}
-		}
 
 		return increasedCount.ToString();
 	}
@@ -38,10 +35,7 @@ public class Day1Solver : DaySolver
 		{
 			var current = lines[i - 1] + lines[i] + lines[i + 1];
 			var next = lines[i] + lines[i + 1] + lines[i + 2];
-			if (current < next)
-			{
-				increasedCount++;
-			}
+			if (current < next) increasedCount++;
 		}
 
 		return increasedCount.ToString();

@@ -6,7 +6,7 @@ public static class AOC
 {
 	// Will make sure the files end up in the main project directory
 	private static string ProjectDirectory =>
-		Directory.GetParent(path: Environment.CurrentDirectory)?.Parent?.Parent?.FullName ??
+		Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.FullName ??
 		throw new FileNotFoundException();
 
 	public static async Task<T> SetupContext<T>() where T : IDaySolver
@@ -19,9 +19,6 @@ public static class AOC
 
 		var year = typeof(T).GetProperty("Year")?.GetValue(null) as string ??
 		           throw new InvalidOperationException("Year property not found");
-
-
-
 
 
 		var options = new DaySolverOptions

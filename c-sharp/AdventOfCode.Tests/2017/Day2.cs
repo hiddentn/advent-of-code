@@ -1,8 +1,6 @@
-using AdventOfCode.Common;
+using AdventOfCode._2017.Day2;
 
 namespace AdventOfCode.Tests._2017;
-
-using AdventOfCode._2017.Day2;
 
 public class Day2Tests
 {

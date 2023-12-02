@@ -24,12 +24,12 @@ public readonly partial struct Point2D<T> :
 	/// <inheritdoc />
 	public static Point2D<T> operator +(Point2D<T> left, Vector2D<T> right)
 	{
-		return new(left.X + right.X, left.Y + right.Y);
+		return new Point2D<T>(left.X + right.X, left.Y + right.Y);
 	}
 
 	/// <inheritdoc />
 	public static Point2D<T> operator -(Point2D<T> left, Vector2D<T> right)
 	{
-		return new(left.X - right.X, left.Y - right.Y);
+		return new Point2D<T>(left.X - right.X, left.Y - right.Y);
 	}
 }

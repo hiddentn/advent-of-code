@@ -24,12 +24,12 @@ public readonly partial struct Point3D<T> :
 	/// <inheritdoc />
 	public static Point3D<T> operator +(Point3D<T> left, Vector3D<T> right)
 	{
-		return new(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
+		return new Point3D<T>(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
 	}
 
 	/// <inheritdoc />
 	public static Point3D<T> operator -(Point3D<T> left, Vector3D<T> right)
 	{
-		return new(left.X - right.X, left.Y - right.Y, left.Z - right.Z);
+		return new Point3D<T>(left.X - right.X, left.Y - right.Y, left.Z - right.Z);
 	}
 }

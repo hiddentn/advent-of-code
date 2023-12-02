@@ -8,21 +8,20 @@ public enum Operation
 {
 	Add = 1,
 	Subtract,
-	Multiply,
+	Multiply
 }
 
 public class Monkey
 {
-	public readonly int Id;
-
 	private readonly Operation _operation;
 	private readonly int? _operationValue;
 
 	private readonly int _testValue;
-	private readonly int _whenTrueMonkeyId;
 	private readonly int _whenFalseMonkeyId;
+	private readonly int _whenTrueMonkeyId;
+	public readonly int Id;
 
-	private int _inspections = 0;
+	private int _inspections;
 	private List<int> _items;
 
 
@@ -73,10 +72,7 @@ public class Monkey
 
 	public void Action(List<Monkey> monkies)
 	{
-		if (_items.Count == 0)
-		{
-			return;
-		}
+		if (_items.Count == 0) return;
 
 
 		for (var i = 0; i < _items.Count; i++)
@@ -85,24 +81,15 @@ public class Monkey
 			_inspections++;
 		}
 
-		for (var i = 0; i < _items.Count; i++)
-		{
-			_items[i] = Convert.ToInt32(Math.Round(_items[i] / 3.0));
-		}
+		for (var i = 0; i < _items.Count; i++) _items[i] = Convert.ToInt32(Math.Round(_items[i] / 3.0));
 
 		foreach (var t in _items)
-		{
 			if (Test(t, _testValue))
-			{
 				// when true
 				monkies.First(x => x.Id == _whenTrueMonkeyId).AddItem(t);
-			}
 			else
-			{
 				// when false
 				monkies.First(x => x.Id == _whenFalseMonkeyId).AddItem(t);
-			}
-		}
 
 		_items = new List<int>();
 	}
@@ -118,10 +105,7 @@ public class Monkey
 			_ => throw new Exception("Unknown operation")
 		};
 
-		if (parts[2] == "old")
-		{
-			return (operation, null);
-		}
+		if (parts[2] == "old") return (operation, null);
 
 		return (operation, parts[2].AsInt());
 	}
@@ -133,7 +117,7 @@ public class Monkey
 			Operation.Add when operationValue is not null => (int)(value + operationValue),
 			Operation.Subtract when operationValue is not null => (int)(value - operationValue),
 			Operation.Multiply when operationValue is not null => (int)(value * operationValue),
-			Operation.Multiply when operationValue is null => (value * value),
+			Operation.Multiply when operationValue is null => value * value,
 			_ => throw new Exception("Unknown operation")
 		};
 	}
@@ -146,10 +130,6 @@ public class Monkey
 
 public class Day11Solver : DaySolver
 {
-
-	public override string Day => "11";
-	public override string Year => "2022";
-
 	private readonly List<Monkey> _monkeys;
 
 	public Day11Solver(DaySolverOptions options) : base(options)
@@ -159,18 +139,17 @@ public class Day11Solver : DaySolver
 			.ToList();
 	}
 
+	public override string Day => "11";
+	public override string Year => "2022";
+
 	public override string SolvePart1()
 	{
 		const int rounds = 20;
 
 
 		foreach (var round in Enumerable.Range(1, rounds))
-		{
-			foreach (var monkey in _monkeys)
-			{
-				monkey.Action(_monkeys);
-			}
-		}
+		foreach (var monkey in _monkeys)
+			monkey.Action(_monkeys);
 
 
 		throw new NotImplementedException();
