@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using AdventOfCode.Common.SpanExtensions;
+using AdventOfCode.Common.Extensions;
 
 namespace AdventOfCode.Common.Helpers;
 

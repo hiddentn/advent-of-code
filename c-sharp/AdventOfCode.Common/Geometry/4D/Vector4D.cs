@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._4D;
 
 /// <summary>
 ///     Represents a vector in 4D space

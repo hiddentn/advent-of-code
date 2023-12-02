@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._4D;
 
 // Operator definitions for <see cref="Vector4D{T}"/>.
 public readonly partial struct Vector4D<T> :

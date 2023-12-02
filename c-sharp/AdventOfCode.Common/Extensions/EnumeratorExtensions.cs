@@ -1,4 +1,4 @@
-namespace AdventOfCode.Common.EnumeratorExtensions;
+namespace AdventOfCode.Common.Extensions;
 
 /// <summary>
 ///     Provides extension methods for enumerators.

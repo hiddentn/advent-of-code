@@ -1,4 +1,4 @@
-namespace AdventOfCode.Common.EnumerableExtensions;
+namespace AdventOfCode.Common.Extensions;
 
 /// <summary>
 ///     Provides extension methods for <see cref="Enumerable" /> and <see cref="IEnumerable{T}" /> types.

@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using AdventOfCode.Common.Helpers;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._3D;
 
 // Adds parsing support to Point3D<T>.
 public readonly partial struct Point3D<T>

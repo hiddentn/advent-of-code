@@ -1,6 +1,9 @@
 using System.Numerics;
+using AdventOfCode.Common.Geometry._2D;
+using AdventOfCode.Common.Geometry._3D;
+using AdventOfCode.Common.Geometry._4D;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry.Extensions;
 
 /// <summary>
 ///     Provides extension methods for vector types.

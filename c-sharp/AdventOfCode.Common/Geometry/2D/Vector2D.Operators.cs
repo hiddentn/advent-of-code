@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._2D;
 
 // Operator definitions for <see cref="Vector2D{T}"/>.
 public readonly partial struct Vector2D<T> :

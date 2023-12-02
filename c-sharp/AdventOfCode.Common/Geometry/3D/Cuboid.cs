@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using AdventOfCode.Common.Numerics;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._3D;
 
 /// <summary>
 ///     Represents geometrical cuboid (specifically rectangular cuboid).

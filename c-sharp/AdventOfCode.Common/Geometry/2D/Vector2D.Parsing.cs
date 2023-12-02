@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using AdventOfCode.Common.Helpers;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._2D;
 
 // Adds parsing support to Vector2D<T>.
 public readonly partial struct Vector2D<T>

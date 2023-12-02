@@ -1,6 +1,7 @@
 using System.Text;
+using AdventOfCode.Common.Spans;
 
-namespace AdventOfCode.Common.EnumeratorExtensions;
+namespace AdventOfCode.Common.Extensions;
 
 /// <summary>
 ///     Provides extension methods for ref struct enumerators not covered in <see cref="EnumeratorExtensions" />

@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using AdventOfCode.Common.Helpers;
 
-namespace AdventOfCode.Common.Geometry;
+namespace AdventOfCode.Common.Geometry._4D;
 
 // Adds parsing support to Point4D<T>.
 public readonly partial struct Point4D<T>

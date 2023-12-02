@@ -1,4 +1,4 @@
-namespace AdventOfCode.Common;
+namespace AdventOfCode.Common.Spans;
 
 /// <summary>
 ///     A struct that allows enumeration of a span splitted into parts.

@@ -1,4 +1,4 @@
-namespace AdventOfCode.Common.StringExtensions;
+namespace AdventOfCode.Common.Extensions;
 
 /// <summary>
 ///     Extension methods for <see cref="string" />.

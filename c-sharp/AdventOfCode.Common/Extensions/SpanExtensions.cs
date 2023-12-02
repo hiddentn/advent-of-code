@@ -1,4 +1,6 @@
-namespace AdventOfCode.Common.SpanExtensions;
+using AdventOfCode.Common.Spans;
+
+namespace AdventOfCode.Common.Extensions;
 
 /// <summary>
 ///     Extension methods for <see cref="Span{T}" /> and <see cref="ReadOnlySpan{T}" />.
