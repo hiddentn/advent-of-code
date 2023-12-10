@@ -33,7 +33,7 @@ public abstract class DaySolver : IDaySolver
 	/// <summary>
 	///     The content that was read from the input file.
 	/// </summary>
-	private string Input { get; }
+	protected string Input { get; }
 
 	/// <summary>
 	///     The lines of the input file (excluding one last empty line after newline break).
