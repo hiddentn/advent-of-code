@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Common", "AdventOfCode.Common\AdventOfCode.Common.csproj", "{1FD6AEE5-D2D3-4A56-932F-53C11B3874B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Common", "src\advent-of-code-common\AdventOfCode.Common.csproj", "{1FD6AEE5-D2D3-4A56-932F-53C11B3874B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode", "AdventOfCode\AdventOfCode.csproj", "{3364DC9A-A66D-4E98-8065-0F96F167C1CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode", "src\advent-of-code\AdventOfCode.csproj", "{3364DC9A-A66D-4E98-8065-0F96F167C1CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Tests", "AdventOfCode.Tests\AdventOfCode.Tests.csproj", "{156A043D-C209-4497-B111-42A671428B2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Tests", "tests\advent-of-code-tests\AdventOfCode.Tests.csproj", "{156A043D-C209-4497-B111-42A671428B2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{43E36B90-28CC-438A-93E4-D5C4B6B18522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,8 @@ Global
 		{156A043D-C209-4497-B111-42A671428B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{156A043D-C209-4497-B111-42A671428B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{156A043D-C209-4497-B111-42A671428B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{156A043D-C209-4497-B111-42A671428B2A} = {43E36B90-28CC-438A-93E4-D5C4B6B18522}
 	EndGlobalSection
 EndGlobal
