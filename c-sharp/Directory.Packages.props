@@ -5,7 +5,7 @@
     <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
     <NoWarn>NU1507</NoWarn>
     <TargetFramework>net9.0</TargetFramework>
-    <LangVersion>13.0</LangVersion>
+    <LangVersion>13</LangVersion>
     <Configurations>Debug;Release</Configurations>
     <Platforms>AnyCPU</Platforms>
     <ImplicitUsings>enable</ImplicitUsings>
