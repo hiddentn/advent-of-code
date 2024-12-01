@@ -18,12 +18,8 @@ public record Game(int Id, List<Set> Sets)
 	public int Power => MaxRed * MaxBlue * MaxGreen;
 }
 
-public class Day2Solver : DaySolver
+public class Day2Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day2Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "2";
 	public override string Year => "2023";
 

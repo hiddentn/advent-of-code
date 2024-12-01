@@ -2,12 +2,8 @@
 
 namespace AdventOfCode._2022.Day1;
 
-public class Day1Solver : DaySolver
+public class Day1Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day1Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "1";
 	public override string Year => "2022";
 

@@ -3,12 +3,8 @@ using AdventOfCode.Common.Extensions;
 
 namespace AdventOfCode._2016.Day1;
 
-public class Day1Solver : DaySolver
+public class Day1Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day1Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "1";
 	public override string Year => "2016";
 

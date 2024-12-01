@@ -4,12 +4,8 @@ namespace AdventOfCode._2023.Day8;
 
 public record Node(string Name, string Left, string Right);
 
-public class Day8Solver : DaySolver
+public class Day8Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day8Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "8";
 	public override string Year => "2023";
 

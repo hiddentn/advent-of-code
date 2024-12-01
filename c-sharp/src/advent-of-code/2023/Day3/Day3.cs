@@ -3,12 +3,8 @@ using AdventOfCode.Common;
 
 namespace AdventOfCode._2023.Day3;
 
-public class Day3Solver : DaySolver
+public class Day3Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day3Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "3";
 	public override string Year => "2023";
 

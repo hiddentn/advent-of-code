@@ -3,12 +3,9 @@
 namespace AdventOfCode._2023.Day13;
 
 
-public class Day13Solver : DaySolver
+public class Day13Solver(DaySolverOptions options) : DaySolver(options)
 {
 	public record Pattern(char[][] Grid);
-	public Day13Solver(DaySolverOptions options) : base(options)
-	{
-	}
 
 	public override string Day => "13";
 	public override string Year => "2023";

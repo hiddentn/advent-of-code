@@ -30,7 +30,7 @@ public static class EnumerableExtensions
 	}
 }
 
-class Day13SolverV2 : DaySolver
+class Day13SolverV2(DaySolverOptions options) : DaySolver(options)
 {
 	public record Pattern(char[][] FieldData)
 	{
@@ -102,10 +102,6 @@ class Day13SolverV2 : DaySolver
 
 	public override string Day => "13";
 	public override string Year => "2023";
-
-	public Day13SolverV2(DaySolverOptions options) : base(options)
-	{
-	}
 
 
 	public Pattern ParseFieldLines(IEnumerable<string> lines) =>

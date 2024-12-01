@@ -85,12 +85,8 @@ class Node(int x, int y, TerrainType terrainType, Node? parent = null)
 	}
 }
 
-public class Day10Solver : DaySolver
+public class Day10Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day10Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	private static char[][] ParseInput(string input)
 	{
 		return input.Split('\n').Select(x => x.ToCharArray()).ToArray();

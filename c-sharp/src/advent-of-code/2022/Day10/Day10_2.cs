@@ -9,16 +9,10 @@ public enum Operation
 	Addx
 }
 
-public class Instruction
+public class Instruction(Operation operation, int argument)
 {
-	public readonly int Argument;
-	public readonly Operation Operation;
-
-	public Instruction(Operation operation, int argument)
-	{
-		Operation = operation;
-		Argument = argument;
-	}
+	public readonly int Argument = argument;
+	public readonly Operation Operation = operation;
 }
 
 public abstract class Cpu

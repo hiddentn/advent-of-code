@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2023.Day15;
 
-public class Day15Solver : DaySolver
+public class Day15Solver(DaySolverOptions options) : DaySolver(options)
 {
 	private record Step
 	{
@@ -82,10 +82,6 @@ public class Day15Solver : DaySolver
 		{
 			return _lenses.Select((lens, i) => (1 + Index) * (i + 1) * lens.FocalLength).Sum();
 		}
-	}
-
-	public Day15Solver(DaySolverOptions options) : base(options)
-	{
 	}
 
 	public override string Day => "15";

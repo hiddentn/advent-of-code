@@ -9,12 +9,8 @@ public record Card(int Number, int[] WiningNumbers, int[] Numbers)
 	public int WinningCardCount => WiningNumbers.Intersect(Numbers).Count();
 };
 
-public class Day4Solver : DaySolver
+public class Day4Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day4Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "4";
 	public override string Year => "2023";
 

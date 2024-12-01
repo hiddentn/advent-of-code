@@ -5,12 +5,8 @@ namespace AdventOfCode._2023.Day12;
 
 public record Row(string Springs, int[] Groups);
 
-public class Day12Solver : DaySolver
+public class Day12Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day12Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "X";
 	public override string Year => "2023";
 

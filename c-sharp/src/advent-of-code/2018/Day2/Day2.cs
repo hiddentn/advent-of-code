@@ -2,12 +2,8 @@
 
 namespace AdventOfCode._2018.Day2;
 
-public class Day2Solver : DaySolver
+public class Day2Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day2Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "2";
 	public override string Year => "2018";
 

@@ -34,12 +34,8 @@ public record Seq(IEnumerable<int> History)
 	public int GetPreviousNumber() => PrevValue(History.ToList());
 };
 
-public class Day9Solver : DaySolver
+public class Day9Solver(DaySolverOptions options) : DaySolver(options)
 {
-	public Day9Solver(DaySolverOptions options) : base(options)
-	{
-	}
-
 	public override string Day => "9";
 	public override string Year => "2023";
 

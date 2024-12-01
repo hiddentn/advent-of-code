@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2023.Day16;
 
-public class Day16Solver : DaySolver
+public class Day16Solver(DaySolverOptions options) : DaySolver(options)
 {
 	private enum Moving
 	{
@@ -13,10 +13,6 @@ public class Day16Solver : DaySolver
 	}
 
 	private record Beam(int X, int Y, Moving Moving);
-
-	public Day16Solver(DaySolverOptions options) : base(options)
-	{
-	}
 
 	public override string Day => "16";
 	public override string Year => "2023";

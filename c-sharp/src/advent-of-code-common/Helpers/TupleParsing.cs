@@ -49,7 +49,7 @@ internal static class TupleParsing
 				throw new FormatException("Missing required brackets.");
 			}
 
-			var splitter = trimmedS.Split(options.Separator);
+			var splitter = SpanExtensions.Split(s, options.Separator);
 			var partCount = 0;
 			foreach (var part in splitter)
 			{
@@ -107,7 +107,7 @@ internal static class TupleParsing
 			return false;
 		}
 
-		var splitter = s.Split(options.Separator);
+		var splitter = SpanExtensions.Split(s, options.Separator);
 		var partCount = 0;
 		foreach (var part in splitter)
 		{

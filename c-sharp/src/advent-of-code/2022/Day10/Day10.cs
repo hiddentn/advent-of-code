@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2022.Day10;
 
-public class Day10Solver : DaySolver
+public class Day10Solver(DaySolverOptions options) : DaySolver(options)
 {
 	private readonly Dictionary<string, int> _actionCycles = new()
 	{
@@ -19,10 +19,6 @@ public class Day10Solver : DaySolver
 		180,
 		220
 	};
-
-	public Day10Solver(DaySolverOptions options) : base(options)
-	{
-	}
 
 	public override string Day => "10";
 	public override string Year => "2022";

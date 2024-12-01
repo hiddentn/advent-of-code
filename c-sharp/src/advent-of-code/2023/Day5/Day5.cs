@@ -27,7 +27,7 @@ public record MappingRange(long Destination, long Source, long Interval)
 	}
 };
 
-public class Day5Solver : DaySolver
+public class Day5Solver(DaySolverOptions options) : DaySolver(options)
 {
 	private static readonly List<string> ConversionTable = new()
 	{
@@ -41,10 +41,6 @@ public class Day5Solver : DaySolver
 	};
 
 	private static Dictionary<string, List<MappingRange>> MappingTable;
-
-	public Day5Solver(DaySolverOptions options) : base(options)
-	{
-	}
 
 	public override string Day => "5";
 	public override string Year => "2023";

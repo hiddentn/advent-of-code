@@ -2,7 +2,7 @@
 
 namespace AdventOfCode._2016.Day2;
 
-public class Day2Solver : DaySolver
+public class Day2Solver(DaySolverOptions options) : DaySolver(options)
 {
 	private static readonly string[][] KeyPad =
 	{
@@ -19,10 +19,6 @@ public class Day2Solver : DaySolver
 		new[] { null, "A", "B", "C", null },
 		new[] { null, null, "D", null, null }
 	};
-
-	public Day2Solver(DaySolverOptions options) : base(options)
-	{
-	}
 
 	public override string Day => "2";
 	public override string Year => "2016";
