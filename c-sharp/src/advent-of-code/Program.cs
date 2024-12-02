@@ -1,9 +1,9 @@
-﻿using AdventOfCode._2024.Day1;
+﻿using AdventOfCode._2024.Day2;
 using AdventOfCode.Common;
 
 
-var options = DaySolverOptions.Configure(opt => { opt.InputFilepath = "2024/Day1/input.txt"; });
-var solver = new Day1Solver(options);
+var options = DaySolverOptions.Configure(opt => { opt.InputFilepath = "2024/Day2/input.txt"; });
+var solver = new Day2Solver(options);
 var watch = Stopwatch.StartNew();
 var part1 = solver.SolvePart1();
 watch.Stop();
